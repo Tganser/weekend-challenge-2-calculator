@@ -1,4 +1,6 @@
-Welcome to your second weekend challenge!
+# Server Calculator application
+## Weekend Challenge 2
+
 --------------------------
 
 We are going to be building a calculator application using jQuery, Node, and Express!!
