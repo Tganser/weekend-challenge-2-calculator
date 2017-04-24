@@ -5,11 +5,8 @@ var bodyParser = require( 'body-parser' );
 //need to require module here
 
 var packageFrom = [];
-
 var port = 3001;
-// var finalresult;
 
-//global variables go here
 
 //set up server and bring in html to Dom
 app.use( express.static( 'public' ) );
@@ -18,7 +15,7 @@ app.use( bodyParser.urlencoded( { extended: true } ) );
 
 // spin up server, are we listening?
 app.listen( port, function(){
-  console.log( 'listening, captain! We\'re on: ', port );
+  console.log( 'listening, captain! We\'re on: Port ', port );
 });
 
 
@@ -43,7 +40,7 @@ app.post('/calc', function( req, res) {
   res.send(200);
 });
 
-
+//this will send the result info to the client.js and call the calculate function
 app.get('/result', function (req, res){
   console.log("we hit the results on the server");
   console.log("packageFrom (in result ajax): ", packageFrom);
@@ -57,13 +54,12 @@ app.get('/result', function (req, res){
   res.send(responseObject);
 });
 
-
+//calculates the result!
 function calculateResult(){
   var x = parseInt(packageFrom.x);
   var y = parseInt(packageFrom.y);
   var type = packageFrom.type;
   var result2;
-
 
   if (type === "add"){
     console.log("x  + y ", x, y);
