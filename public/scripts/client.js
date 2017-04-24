@@ -10,6 +10,7 @@ $(document).ready(function(){
 
   $( '#clear' ).on( 'click', function(){
     console.log("in clear button");
+    clearInputs();
   });
 
 
@@ -60,7 +61,6 @@ $(document).ready(function(){
     recieveResult();
   });
 
-  // sendforCalc();
 });
 
 function sendforCalc(){
@@ -73,7 +73,7 @@ function sendforCalc(){
       console.log( 'back from server with:', response );
       // empty outputDiv
       $( '.status' ).empty();
-      $('.status').append(response);
+      // $('.status').append(response);
     } // end success
   }); // end ajax
 } // end sendforCalc
@@ -91,3 +91,11 @@ function recieveResult(){
     } // end success
   }); // end ajax
 } // end recieveResult
+
+function clearInputs(){
+  console.log("in clear Inputs");
+  $( '#first' ).val('');
+  $( '#second' ).val('');
+  $( '#type' ).val('');
+  $( '.answer' ).empty();
+}
