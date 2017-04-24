@@ -12,6 +12,7 @@ $(document).ready(function(){
     console.log("in submit button");
     console.log("x, y : ", doTheMath.x, doTheMath.y);
     console.log("type: ", doTheMath.type);
+    recieveResult();
   });
 
 
@@ -71,8 +72,22 @@ function sendforCalc(){
     success: function( response ){
       console.log( 'back from server with:', response );
       // empty outputDiv
-      $( '.answer' ).empty();
-      $('.answer').append(response);
+      $( '.status' ).empty();
+      $('.status').append(response);
     } // end success
   }); // end ajax
 } // end sendforCalc
+
+function recieveResult(){
+  // make ajax call to server to calculate
+  $.ajax({
+    url: '/result',
+    type: 'GET',
+    success: function( response ){
+      console.log( 'back from server with our result:', response );
+      // empty outputDiv
+      $( '.answer' ).empty();
+      $('.answer').append(response.result);
+    } // end success
+  }); // end ajax
+} // end recieveResult

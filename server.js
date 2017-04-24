@@ -7,6 +7,7 @@ var bodyParser = require( 'body-parser' );
 var packageFrom;
 
 var port = 3001;
+var finalresult;
 
 //global variables go here
 
@@ -38,4 +39,12 @@ app.post('/calc', function( req, res) {
   console.log(packageFrom.x);
   // console.log(packageFrom);
   res.send(200);
+});
+
+app.get('/result', function (req, res){
+  console.log("we hit the results on the server");
+  finalresult =  {
+    result : 204
+  };
+  res.send(finalresult);
 });
