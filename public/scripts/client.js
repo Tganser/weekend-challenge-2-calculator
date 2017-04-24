@@ -8,14 +8,6 @@ $(document).ready(function(){
   console.log("client.js is here and ready.");
 
 
-  $( '#submit' ).on( 'click', function(){
-    console.log("in submit button");
-    console.log("x, y : ", doTheMath.x, doTheMath.y);
-    console.log("type: ", doTheMath.type);
-    recieveResult();
-  });
-
-
   $( '#clear' ).on( 'click', function(){
     console.log("in clear button");
   });
@@ -60,7 +52,15 @@ $(document).ready(function(){
     console.log(doTheMath.type);
   });
 
-  sendforCalc();
+  $( '#submit' ).on( 'click', function(){
+    console.log("in submit button");
+    console.log("x, y : ", doTheMath.x, doTheMath.y);
+    console.log("type: ", doTheMath.type);
+    sendforCalc();
+    recieveResult();
+  });
+
+  // sendforCalc();
 });
 
 function sendforCalc(){
