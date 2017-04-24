@@ -1,6 +1,7 @@
 body {
   font-family: 'Roboto Slab', serif;
   /*font-family: 'Dosis', sans-serif;*/
+  text-align: center;
 }
 
 h1 {
@@ -16,7 +17,7 @@ margin-top: 0px;
 }
 
 .buttontopia {
-  margin-top: 2em;
+  margin-top: 0em;
 }
 
 .maths {
