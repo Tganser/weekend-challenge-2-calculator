@@ -4,6 +4,8 @@ var path = require( 'path' );
 var bodyParser = require( 'body-parser' );
 //need to require module here
 
+var packageFrom;
+
 var port = 3001;
 
 //global variables go here
@@ -26,4 +28,14 @@ app.get( '/', function( req, res ){
   res.sendFile( path.resolve( 'public/views/index.html' ) );
 }); // end html get
 
+
+
 //here will go ajax get/post/calls
+app.post('/calc', function( req, res) {
+  //do the calcuation in a different function
+  packageFrom = req;
+  console.log("we hit the calc one on the server!");
+  console.log(packageFrom.x);
+  // console.log(packageFrom);
+  res.send(200);
+});
